@@ -1,6 +1,8 @@
 package com.example.webblogapplication.services;
 
+import com.example.webblogapplication.entities.Comment;
 import com.example.webblogapplication.entities.User;
+import com.example.webblogapplication.reposiries.CommentRepository;
 import com.example.webblogapplication.reposiries.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,9 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private CommentRepository commentRepository;
 
     public List<User> getAll(){
         return userRepository.findAll();
@@ -30,5 +35,9 @@ public class UserService {
 
     public void deleteById(long id){
         userRepository.deleteById(id);
+    }
+
+    public List<Comment> getCommentList(long id){
+        return commentRepository.getAllByUserId(id);
     }
 }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" th:href="@{css/rooms.css}" href="../static/css/rooms.css">
+    <title>Users</title>
+</head>
+
+<body>
+
+<div class="all-users">
+    <br>
+    <div class="rooms-in-line" th:each="user : ${userList}">
+        <a class="caption" th:href="@{'/user/' + ${user.getId()}}" ><p th:text="${user.getFirstName()}"></p>
+        <p th:text="${user.getLastName()}"></p>
+        <p th:text="${user.getEmail()}"></p></a>
+    </div>
+    <hr>
+</div>
+</body>
+</html>

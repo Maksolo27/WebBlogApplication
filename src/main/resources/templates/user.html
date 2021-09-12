@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" th:href="@{css/rooms.css}" href="../static/css/rooms.css">
+  <title th:text="${user.getEmail()}"></title>
+</head>
+<body>
+      <p th:text="${user.getEmail()}"></p>
+      <p th:text="${user.getFirstName()}"></p>
+      <p th:text="${user.getLastName()}"></p>
+      <p th:text="${user.getPhoneNumber()}"></p>
+      <div th:each="comment : ${userComments}">
+            <p th:text="${comment.getComment()}"></p>
+            <p th:text="${comment.getDate()}"></p>
+      </div>
+</body>
+</html>
