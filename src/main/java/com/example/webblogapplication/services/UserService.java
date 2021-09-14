@@ -2,12 +2,9 @@ package com.example.webblogapplication.services;
 
 import com.example.webblogapplication.entities.Comment;
 import com.example.webblogapplication.entities.User;
-import com.example.webblogapplication.reposiries.CommentRepository;
-import com.example.webblogapplication.reposiries.UserRepository;
+import com.example.webblogapplication.repositories.CommentRepository;
+import com.example.webblogapplication.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
