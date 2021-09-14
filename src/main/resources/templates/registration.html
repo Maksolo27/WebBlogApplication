@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" th:href="@{css/rooms.css}" href="../static/css/rooms.css">
+  <title>Registration</title>
+</head>
+<body>
+<div>
+  <form action="#" th:action="@{/registration}" th:method="post">
+    <input id="title_input" name="userName" type="text" placeholder="Enter your username" required>
+    <input id="title_input" name="firstName" type="text" placeholder="Enter your fitrstName" required>
+    <input id="title_input" name="lastName" type="text" placeholder="Enter your lastName" required>
+    <input id="title_input" name="password" type="text" placeholder="Enter password" required>
+    <br>
+    <input type="submit" value="Enter" class="input_submit">
+  </form>
+</div>
+</body>
+</html>

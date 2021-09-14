@@ -5,6 +5,9 @@ import com.example.webblogapplication.entities.User;
 import com.example.webblogapplication.reposiries.CommentRepository;
 import com.example.webblogapplication.reposiries.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -29,8 +32,9 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User add(User user){
-        return userRepository.saveAndFlush(user);
+    public boolean add(User user){
+        userRepository.saveAndFlush(user);
+        return true;
     }
 
     public void deleteById(long id){
@@ -40,4 +44,8 @@ public class UserService {
     public List<Comment> getCommentList(long id){
         return commentRepository.getAllByUserId(id);
     }
+    public User getByUserName(String userName){
+        return userRepository.getUserByUserName(userName);
+    }
+
 }
